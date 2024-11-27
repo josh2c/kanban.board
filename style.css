@@ -1,0 +1,211 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    background-color: #f5f7fa;
+    color: #333;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #1d2d44, #2f3d57);
+    color: #fff;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-item {
+    background: none;
+    color: #fff;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-item:hover {
+    background-color: #5d6d7e;
+    transform: scale(1.05);
+}
+
+.sidebar-item:focus {
+    outline: none;
+}
+
+/* Main content area */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+    width: calc(100% - 250px);
+}
+
+/* Header - Column Titles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.header h4 {
+    background-color: #4b5d6e;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 8px;
+    text-align: center;
+    width: 22%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Drag-and-drop container */
+.drag-drop-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Ensures horizontal scrolling if there are too many columns */
+    padding-bottom: 20px;
+    justify-content: space-between; /* Distributes space between columns */
+}
+
+/* Column styles */
+.col {
+    width: 22%; /* Ensures each column takes up the same width */
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.col:hover {
+    transform: scale(1.02); /* Adds a hover effect on columns */
+}
+
+/* Column Title */
+.header h4 {
+    background-color: #4b5d6e;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ensures the header takes up full width of the column */
+}
+
+/* Task card styles with color differentiation */
+.task {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease, box-shadow 0.2s ease;
+    min-height: 60px; /* Ensures each task has a minimum height */
+    background: #ffffff; /* Default background color */
+}
+
+.task:hover {
+    background-color: #f7f9fc;
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Task Status Colors */
+.task.to-do {
+    background-color: #ffadad; /* Light red for "To Do" tasks */
+}
+
+.task.in-progress {
+    background-color: #ffec7f; /* Light yellow for "In Progress" tasks */
+}
+
+.task.done {
+    background-color: #7eff7f; /* Light green for "Done" tasks */
+}
+
+/* Task Text */
+.task p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Making columns responsive */
+@media (max-width: 1200px) {
+    .drag-drop-container {
+        flex-direction: column; /* Stacks the columns on top of each other */
+    }
+
+    .col {
+        width: 100%; /* Makes each column take up full width on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .header h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .drag-drop-container {
+        flex-direction: column;
+    }
+
+    .col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .header h4 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+}
+
