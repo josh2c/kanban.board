@@ -11,9 +11,9 @@ Features
 
 Next Steps and Future Improvements
 
-    Sign-in and Authentication: Implement a sign-in feature so users can create accounts and log in to their personalized Kanban boards. This will allow users to access their boards securely and from different devices.
-    Task Persistence: Implement a way to save tasks and their locations (columns). This will prevent data loss and ensure users’ tasks are saved even when they refresh or close the page. This could be achieved by using localStorage, sessionStorage, or a backend database.
-    Backend Integration: Add server-side logic to store user data and tasks. This could include using a database (e.g., MongoDB, MySQL) to persist tasks, users, and board states.
+Sign-in and Authentication: Implement a sign-in feature so users can create accounts and log in to their personalized Kanban boards. This will allow users to access their boards securely and from different devices.
+Task Persistence: Implement a way to save tasks and their locations (columns). This will prevent data loss and ensure users’ tasks are saved even when they refresh or close the page. This could be achieved by using localStorage, sessionStorage, or a backend database.
+ Backend Integration: Add server-side logic to store user data and tasks. This could include using a database (e.g., MongoDB, MySQL) to persist tasks, users, and board states.
     User Interface Enhancements: Improve the UI by adding more interactivity, such as task filters, search functionality, and due dates for tasks.
     Task Deadline & Reminders: Add due dates to tasks and set up notifications or reminders when a task is approaching its deadline.
     Task Prioritization: Allow users to prioritize tasks with tags or custom labels, and visually distinguish them with color coding.
